@@ -1,12 +1,17 @@
-import { useEffect, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import './App.css';
 import MovieCard from './MovieCard';
 import SearchIcon from "./search.svg";
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import AboutView from './components/AboutView';
+import {Routes, Route} from 'react-router-dom';
 
 const API_URL = 'http://www.omdbapi.com?&apikey=8ca1194e';
 
 
 function App() {
+ 
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -21,6 +26,14 @@ function App() {
   },[])
   return (
     <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+
+        <Route path="/about" element={<AboutView/>}/>
+      </Routes>
+      
+    
       <h1>Movie World</h1>
       <div className="search">
         <input 
