@@ -14,12 +14,11 @@
 
 body {
   font-family: var(--font-roboto);
-  background-color: #212426;
 }
 
-.app {
+.main-content {
   padding: 4rem;
-
+  background-color: #212426;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +32,12 @@ h1 {
     90deg,
     rgba(249, 211, 180, 1) 0%,
     rgba(249, 211, 180, 0) 100%
+
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 .search {
@@ -74,21 +74,6 @@ h1 {
   cursor: pointer;
 }
 
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
-
 .empty {
   width: 100%;
   margin-top: 3rem;
@@ -107,7 +92,6 @@ h1 {
 .container {
   width: 100%;
   margin-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,7 +176,7 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-  .app {
+  .main-content {
     padding: 4rem 2rem;
   }
 
@@ -212,7 +196,7 @@ h1 {
 }
 
 @media screen and (max-width: 400px) {
-  .app {
+  .main-content {
     padding: 4rem 1rem;
   }
 
@@ -228,4 +212,40 @@ h1 {
     width: "100%";
     margin: 1rem;
   }
+}
+
+/* ///// second */
+.hero-container {
+  position: relative;
+  z-index: 100;
+}
+.hero-text {
+  position: relative;
+  z-index: 200;
+  text-stroke: 1px #000;
+  -webkit-text-stroke: 1px #000;
+}
+
+.hero-backdrop {
+  position:absolute;
+  top:0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+.btn-detail {
+  background-color: #000;
+  color:#fff ;
+}
+.card {
+  padding-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+.card-body{
+  position: absolute;
+  bottom: 0;
+  background-color: azure;
+  width: 100%;
 }
